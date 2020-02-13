@@ -1,0 +1,693 @@
+@import vars
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Playfair+Display:700,700i&display=swap')
+@import libs
+
+::placeholder
+	color: $gray
+	font-family: $default-font
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	margin: 0
+	border: none
+	box-sizing: border-box
+
+input
+	padding: 10px 12px 7px
+	font-family: $default-font
+	font-size: 16px
+	font-weight: 400
+	color: #333333
+	width: 100%
+
+button
+	border: none
+	outline: none
+
+.button
+	background-color: #000000
+	color: #ffffff
+	padding: 8px 60px
+	text-transform: uppercase
+	font-family: $default-font
+	font-weight: 400
+	font-size: 18px
+	width: 100%
+	cursor: pointer
+	&:active
+		transition: all .2s ease
+		background-color: $accent
+
+h1,h2,h3,h4,h5,h6, p
+	padding: 0
+	margin: 0
+	cursor: default
+
+.h1
+	font-family: 'Playfair Display'
+	font-weight: 700
+	font-style: italic
+	font-size: 30px
+	text-transform: uppercase
+	color: #000000
+	line-height: 23.65px
+
+.h2
+	font-family: 'Playfair Display'
+	font-weight: 700
+	font-size: 28px
+	line-height: 31px
+
+html
+	padding: 0
+	margin: 0
+	
+body
+	padding: 0
+	margin: 0
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	letter-spacing: 0.2px
+	overflow-x: hidden
+	display: flex
+	flex-direction: column
+	justify-content: center
+
+.container
+	width: 1200px
+
+// Начало: Стили для header
+
+.header
+	width: 100%
+	height: 130px
+	background-color: $brown
+	position: absolute
+	z-index: 1
+	display: flex
+	align-items: center
+	justify-content: center
+	line-height: 1.65
+	&__content
+		display: flex
+		justify-content: space-between
+		align-items: center
+		height: 100%
+	&__nav
+		height: 100%
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		align-items: flex-end
+
+.registration
+	color: #ffffff
+	text-transform: uppercase
+	font-family: $default-font, sans-serif
+	font-weight: 300
+	font-size: 14px
+
+	&__item_a
+		color: #ffffff
+		text-decoration: none
+		transition: all .3s ease
+		&:hover
+			color: rgba(#fff, .6)
+	&::after
+		content: ''
+		background-image: url(../img/lock-icon.png)
+		width: 9px
+		height: 13px
+		display: inline-block
+		margin-left: 10px
+
+.nav__registration
+	margin-top: 1px
+
+.menu
+	list-style-type: none
+	text-transform: uppercase
+	font-size: 18px
+	&__item_li
+		display: inline-block
+		margin-left: 18px
+		&:first-child
+			margin-left: 0
+	&__item_a
+		text-decoration: none
+		color: #ffffff
+		font-family: $default-font, sans-serif
+		font-weight: 400
+		transition: all .3s ease
+		&:hover
+			color: rgba(#fff, .6)
+		&_active
+			color: $accent
+			font-weight: 600
+			&:hover
+				color: $accent
+
+// НАчало: Выпадающее подменю при наведении
+
+.menu__submenu
+	position: absolute
+	display: none
+
+
+.submenu__ul
+	list-style-type: none
+	background-color: $brown
+	margin: 0
+	padding: 5px 10px
+
+.submenu__item
+	border-bottom: 1px solid #ffffff
+	padding-left: 5px
+	&:last-child
+		border: none
+
+.submenu__link
+	font-family: 'Open Sans'
+	font-size: 16px
+	font-weight: 400
+	text-transform: uppercase
+	color: #ffffff
+	text-decoration: none
+	transition: all .3s ease
+	&:hover
+		color: rgba(#fff, .6)
+	&_active
+		color: $accent
+		&:hover
+			color: $accent
+	
+
+// Конец: выпадающее подменю при наведении 
+	
+.nav
+	&__menu
+		padding: 0
+		margin: 0
+		margin-bottom: 14px
+
+.logo
+	line-height: 0px
+
+.logo__img
+	width: 283px
+	height: auto
+
+// Конец: Стили для header
+
+// Начало: Стили всплывающего окна 
+
+.popup-window-wrap
+	position: absolute
+	left: 0
+	top: 0
+	width: 100%
+	height: 100vh
+	background-color: rgba(#fff, .6)
+	z-index: 1000
+	display: none
+
+.popup-window
+	width: 100%
+	height: 100%
+	display: flex
+	justify-content: center
+	align-items: center
+
+.popup-window-content
+	background-color: $brown
+	width: 50%
+	position: relative
+	&__headline
+		font-family: 'Playfair Display'
+		font-weight: 700
+		font-size: 24px
+		text-transform: uppercase
+		color: #ffffff
+		width: 100%
+		text-align: center
+		margin-top: 10px
+
+.popup-close-button
+	position: absolute
+	top: 13px
+	right: 18px
+	z-index: 1000
+
+.popup-close-icon-img
+	width: 20px
+
+.login-wrap
+	position: relative
+
+.login-wrap__popup-window-content
+	margin: 25px 0px 15px 
+
+.login__button
+	margin: 14px 0px
+
+.forgot-password-link
+	font-family: $default-font
+	font-size: 12px
+	color: $gray
+	font-weight: 400
+	text-decoration: none
+	transition: all .5s ease
+	&:hover
+		text-decoration: underline
+
+.enter
+	display: flex
+	flex-direction: column
+	width: 30%
+	&:nth-child(3)
+		margin-bottom: 0 !important
+
+.reg
+	width: 30%
+
+.input-registration
+	margin-bottom: 9px
+	&_mb-more
+		margin-bottom: 12px
+
+.input__checkbox
+	width: auto
+	margin-right: 5px
+
+.input-label
+	display: flex
+	align-items: flex-end
+	color: $gray
+	font-family: $default-font
+	font-weight: 400
+	font-size: 10px
+
+.login__input-label
+	margin: 14px 0
+
+.login-headline
+	font-family: 'Playfair Display'
+	font-weight: 700
+	font-size: 18px
+	text-transform: uppercase
+	color: #ffffff
+	line-height: 23.4px
+	margin-bottom: 10px
+
+// Конец: Стили для всплывающего окна
+
+// Начало: стили для блока со слайдером
+
+.first-screen
+	width: 100%
+	height: 100vh
+	display: block
+
+.slider
+	width: 100%
+	position: relative
+	height: 100vh
+
+
+.slide
+	background: url(../img/bg-big.png) no-repeat top center
+	background-size: cover
+	width: 100%
+	height: 100%
+	display: flex
+	align-items: center
+	justify-content: flex-end		
+
+// НОВАЯ ПАНЕЛЬ
+
+// Начало: Стили для надписи в слайде
+
+.slide__content
+	width: 30%
+	background-color: rgba(#fff, .85)
+	padding: 15px 25px
+
+.slider__h1
+	margin-bottom: 31px
+	line-height: 35px
+
+.sign
+	font-family: $default-font
+	font-weight: 400
+	font-size: 18px
+	color: #000000
+
+// Конец: стили для надписи в слайде
+
+.l-panel__readmore-link-container
+	display: flex
+	justify-content: flex-end
+	padding-right: 20px
+	padding-bottom: 7px
+	&_bg-brown
+		background-color: $accent
+	&_bg-white
+		background-color: #ffffff
+	&_bg-black
+		background-color: #000000
+
+.c-panel__readmore-link
+	text-decoration: none
+	color: #ffffff
+	font-family: $default-font
+	font-size: 18px
+	font-weight: 400
+	text-align: right
+	&:hover
+		transition: all .2s ease
+		text-decoration: underline
+	&_black
+		color: #000000
+
+// Начало: Стили для выезжающей панели по нажатию стрелки вверх
+
+.slider__additional-window-container
+	display: flex
+	justify-content: center
+	position: absolute
+	bottom: 0
+	width: 100%
+	z-index: 10
+
+.slider__content-open-button
+	background-color: #ffffff
+	padding: 5px 23px 6px
+	display: block
+	z-index: 10
+	margin: auto 0
+	line-height: 0
+
+.open-button-img
+	width: 41px
+
+.slider-content
+	display: flex
+	justify-content: center
+	width: 100%
+
+.slider-content-wrap
+	display: none
+	width: 100%
+
+.open-button-wrap
+	position: absolute
+	bottom: 0
+	width: 100vw
+	display: flex
+	flex-wrap: wrap
+	justify-content: center
+
+.open-button-img
+	transition: all 1s ease
+	
+.rotate-180
+	transform: rotateX(180deg)
+
+.slider-content__item
+	padding: 10px 20px 3px 16px
+	width: 33.3%
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+
+.slider-content__headline
+	padding: 12px 23px 5px 15px
+	flex: 1 1 0
+	&_bg-brown
+		background-color: $accent
+	&_bg-white
+		background-color: #ffffff
+	&_bg-black
+		background-color: #000000
+
+.slider-content-text-line__item
+	padding: 0px 40px 10px 15px
+	flex: 1 1 0
+	&_bg-brown
+		background-color: $accent
+	&_bg-white
+		background-color: #ffffff
+	&_bg-black
+		background-color: #000000
+
+.slider-content__text
+	font-family: $default-font
+	font-weight: 400
+	font-size: 16px
+	color: #000000
+	letter-spacing: 0
+	line-height: 26px
+	&_white
+		color: #ffffff
+
+.h2_white
+	color: #ffffff
+	
+
+// Конец: Стили для выезжающего блока по нажатию стрелки вверх
+
+// Конец: Стили для блока со слайдером
+
+// Начало: Служебные классы
+
+.d-f
+	display: flex
+
+.fd-col
+	flex-direction: column
+
+.jc-sb
+	justify-content: space-between
+
+.jc-sa
+	justify-content: space-around
+.jc-c
+	justify-content: center
+
+.fw-w
+	flex-wrap: wrap
+
+.h-100
+	height: 100%
+
+.w-100
+	width: 100%
+
+.z-i-100
+	z-index: 100
+
+.z-i-0
+	z-index: 0
+
+.h-100vh
+	height: 100vh
+
+.lg-hidden
+	display: none
+
+.d-none
+	display: none
+// Конец: Служебные классы
+
+// Начало: Настройка плагина bxSlider.js
+
+.bxSlider
+	height: 100%
+
+.bx-wrapper
+	border: none
+	box-shadow: none
+	height: 100%
+
+.bx-viewport
+	height: 100% !important
+
+.bx-wrapper .bx-controls-auto, .bx-wrapper .bx-pager
+	bottom: 40px
+
+.bx-wrapper .bx-pager.bx-default-pager a
+	background-color: #fff
+	border: 2px #000 solid
+	border-radius: 10rem
+
+.bx-wrapper .bx-pager.bx-default-pager a.active, .bx-wrapper .bx-pager.bx-default-pager a:focus, .bx-wrapper .bx-pager.bx-default-pager a:hover
+	background-color: $accent
+
+// Конец: Настройка плагина bxSlider.js
+
+// Начало: Стили для footer
+
+.footer
+	display: flex
+	justify-content: center
+	width: 100%
+	background-color: $brown
+	padding: 33px 0px 15px 0px
+
+.footer-information
+	width: 930px
+	display: flex
+	justify-content: space-between
+
+.footer-headlines-line
+	width: 100%
+	margin-bottom: 20px
+	&__item
+		width: 20%
+
+.footer-information-line
+	width: 100%
+	margin-bottom: 35px
+	&__item
+		width: 20%
+		z-index: 0
+
+
+.footer-headlines-line__item
+	font-family: 'Playfair Display'
+	font-weight: 700
+	font-size: 14px
+	color: #ffffff
+	text-transform: uppercase
+
+.footer-information__text
+	font-family: $default-font
+	font-weight: 300
+	font-size: 12px
+	color: #ffffff
+	line-height: 18px
+
+.footer__button
+	padding: 5px 56px
+
+.footer__input
+	font-family: $default-font
+	font-weight: 300
+	font-size: 14px
+	margin-bottom: 10px
+	padding: 10px 6px 7px
+	line-height: 16.82px
+
+.mb-0
+	margin-bottom: 0
+
+.footer__input-label
+	margin: 10px 0px
+
+.contacts-line-wrap
+	position: static
+	bottom: 18px
+	width: 100%
+
+.l-container-contacts
+	position: relative
+
+.contacts
+	position: absolute
+	left: 0
+	bottom: 0
+
+.contacts__ul
+	list-style-type: none
+	margin: 0
+	padding: 0
+
+.social
+	display: flex
+	flex-direction: column
+	justify-content: flex-end
+	position: absolute
+	bottom: 15px
+	
+
+.social-ul
+	list-style-type: none
+	margin: 0
+	padding: 0
+	line-height: 0
+
+.social-li
+	display: inline-block
+	margin-left: 10px
+	line-height: 0
+	&:first-child
+		margin-left: 0
+
+.social__icon
+	width: 16px
+	height: 16px
+	transition: all .3s ease
+	&:hover
+		opacity: 0.7
+
+.contacts__li
+	display: inline-block
+	margin-left: 15px
+	font-size: 12px
+	font-family: $default-font
+	color: #ffffff
+	font-weight: 400
+	text-decoration: none
+	cursor: default
+	&:first-child
+		margin-left: 0
+
+.contacts__link
+	font-size: 12px
+	font-family: $default-font
+	color: #ffffff
+	font-weight: 400
+	text-decoration: none
+	transition: all .3s ease
+	&:hover
+		color: rgba(#fff , .6)
+.contacts__lang
+	display: inline-block
+	color: #ffffff
+	
+.lang
+	position: absolute
+	right: 0
+	bottom: 0
+
+.lang__link
+	text-transform: uppercase
+	font-family: $default-font
+	font-weight: 400
+	font-size: 14px
+	color: #ffffff
+	text-decoration: none
+	padding: 0px 10px
+	border-left: 1px solid #ffffff
+	transition: all .3s ease
+	&:hover
+		color: rgba(#fff , .6)
+	&_b-none
+		border: none
+	&_pl-0
+		padding-left: 0
+	&_pr-0
+		padding-right: 0
+
+// Конец: Стили для footer
+
+@import media
+
+
+
+
